@@ -3,10 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="We presented Generative Predictive Control (GPC), a learning control paradigm that combines a generative policy with a predictive world model during online planning.">
-  <meta name="keywords" content="Robot Learning: Model Learning, Robot Planning, Robot Learning: Imitation Learning, Perceptual Learning">
+        content="Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling (formerly titled: Strengthening Generative Robot Policies through Predictive World Modeling). We presented Generative Predictive Control (GPC), a learning control paradigm that combines a generative policy with a predictive world model during online planning.">
+    <meta name="keywords" content="world model, predictive world modeling, generative predictive control, GPC, diffusion policy, behavior cloning, inference-time adaptation, online planning, model-based look-ahead, action-conditioned world model, robot manipulation, robot learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Strengthening Generative Robot Policies through Predictive World Modeling</title>
+    <meta name="robots" content="index,follow">
+  <title>Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling (a.k.a. Strengthening Generative Robot Policies through Predictive World Modeling)</title>
+
+  <meta property="og:title" content="Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Generative Predictive Control (GPC)">
+  <meta property="og:description" content="Formerly titled: Strengthening Generative Robot Policies through Predictive World Modeling. Generative Predictive Control (GPC) combines a generative diffusion policy with an action-conditioned world model during online planning.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling">
+  <meta name="twitter:description" content="Formerly titled: Strengthening Generative Robot Policies through Predictive World Modeling. Generative Predictive Control (GPC) combines a generative diffusion policy with an action-conditioned world model during online planning.">
+
+    <meta name="citation_title" content="Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling">
+    <meta name="citation_author" content="Han Qi">
+    <meta name="citation_author" content="Haocheng Yin">
+    <meta name="citation_author" content="Aris Zhu">
+    <meta name="citation_author" content="Yilun Du">
+    <meta name="citation_author" content="Heng Yang">
+    <meta name="citation_arxiv_id" content="2502.00622">
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2502.00622.pdf">
+    <meta name="citation_abstract_html_url" content="https://arxiv.org/abs/2502.00622">
+    <meta name="citation_journal_title" content="IEEE Robotics and Automation Letters">
+    <meta name="citation_keywords" content="world model; predictive world modeling; diffusion policy; behavior cloning; inference-time adaptation; model-based planning">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling",
+      "alternateName": "Strengthening Generative Robot Policies through Predictive World Modeling",
+      "sameAs": "https://arxiv.org/abs/2502.00622",
+      "keywords": [
+        "world model",
+        "predictive world modeling",
+        "diffusion policy",
+        "behavior cloning",
+        "inference-time adaptation",
+        "model-based planning",
+        "online planning",
+        "robot manipulation"
+      ],
+      "about": [
+        {"@type": "Thing", "name": "world model"},
+        {"@type": "Thing", "name": "predictive world modeling"},
+        {"@type": "Thing", "name": "diffusion policy"},
+        {"@type": "Thing", "name": "behavior cloning"},
+        {"@type": "Thing", "name": "inference-time adaptation"},
+        {"@type": "Thing", "name": "model-based planning"}
+      ],
+      "author": [
+        {"@type": "Person", "name": "Han Qi"},
+        {"@type": "Person", "name": "Haocheng Yin"},
+        {"@type": "Person", "name": "Aris Zhu"},
+        {"@type": "Person", "name": "Yilun Du"},
+        {"@type": "Person", "name": "Heng Yang"}
+      ]
+    }
+  </script>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -79,8 +135,16 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">
-            Strengthening Generative Robot Policies through Predictive World Modeling
+            <span class="is-block">Inference-Time Enhancement of</span>
+            <span class="is-block">Generative Robot Policies via</span>
+            <span class="is-block">Predictive World Modeling</span>
           </h1>
+          <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 0.25rem;">
+            Accepted to IEEE Robotics and Automation Letters (RA-L)
+          </p>
+          <p class="subtitle is-5" style="margin-top: 0;">
+            Previously titled: <span style="font-style: italic;">Strengthening Generative Robot Policies through Predictive World Modeling</span>
+          </p>
           <!-- <h2 class="title is-3 publication-title">
             <a href="conference_link_url">
               <img src="conference_icon_svg" alt="conference_logo" width="50">
@@ -192,15 +256,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present generative predictive control (<span class="dnerf">GPC</span>), 
-            a learning control framework that (i) clones a <em>generative</em> diffusion-based 
-            policy from expert demonstrations, (ii) trains a <em>predictive</em> 
-            action-conditioned world model from both expert demonstrations and random 
-            explorations, and (iii) synthesizes an online planner that ranks and optimizes 
-            the action proposals from (i) by looking ahead into the future using the world model 
-            from (ii). Across a variety of robotic manipulation tasks, we demonstrate 
-            that <span class="dnerf">GPC</span> consistently outperforms behavior cloning in both
-            state-based and vision-based settings, in simulation and in the real world.
+            Abstract—We present generative predictive control (<span class="dnerf">GPC</span>),
+            a framework for inference-time enhancement of pretrained behavior-cloning policies.
+            Rather than retraining or fine-tuning, <span class="dnerf">GPC</span> augments a frozen
+            diffusion policy at deployment by coupling it with a predictive world model.
+            Concretely, we train an action-conditioned world model on expert demonstrations and
+            random exploration rollouts to forecast the consequences of action proposals produced
+            by the diffusion policy, then perform lightweight online planning that ranks and
+            refines these proposals via model-based look-ahead. This combination of a generative
+            prior with predictive foresight enables test-time adaptation. Across diverse robotic
+            manipulation tasks—state- and vision-based, in simulation and on real hardware—<span class="dnerf">GPC</span>
+            consistently outperforms standard behavior cloning and compares favorably to other
+            inference-time adaptation baselines.
+          </p>
+          <p>
+            <strong>Keywords:</strong> world model; predictive world modeling; diffusion policy; behavior cloning;
+            inference-time adaptation; model-based planning; online planning.
           </p>
         </div>
       </div>
@@ -216,61 +287,9 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3">Simulation Evaluation</h2>
 
-    <!-- Simulation Evaluation -->
-    <div class="columns">
-      <div class="column is-centered">
-        <div class="content has-text-centered">
-          <video id="Push-T" autoplay controls muted playsinline>
-            <source src="./static/videos/simulation_eval_demos/push-t.mp4"
-                    type="video/mp4">
-          </video>
-          <p>
-            Push-T
-          </p>
-        </div>
-      </div>
-
-      <div class="column is-centered">
-        <div class="content has-text-centered">
-          <video id="Triangle_Drawing" autoplay controls muted playsinline>
-            <source src="./static/videos/simulation_eval_demos/drawing.mp4"
-                    type="video/mp4">
-          </video>
-          <p>
-            Triangle Drawing
-          </p>
-        </div>
-      </div>
+    <div class="content has-text-centered">
+      <img src="./static/videos/simulation.gif" alt="Simulation evaluation" style="max-width: 100%; height: auto;">
     </div>
-
-    <div class="columns">
-      <div class="column is-centered">
-        <div class="content has-text-centered">
-          <video id="Block_Stacking" autoplay controls muted playsinline>
-            <source src="./static/videos/simulation_eval_demos/block-stacking.mp4"
-                    type="video/mp4">
-          </video>
-          <p>
-           Block Stacking
-          </p>
-        </div>
-      </div>
-
-      <div class="column is-centered">
-        <div class="content has-text-centered">
-          <video id="Swapping" autoplay controls muted playsinline>
-            <source src="./static/videos/simulation_eval_demos/swap.mp4"
-                    type="video/mp4">
-          </video>
-          <p>
-            Cube & Sphere Swapping
-          </p>
-        </div>
-      </div>      
-     
-
-    </div>
-    <!-- Simulation Evaluation -->
   </div>
 </section> 
 <!-- Simulation Evaluation. -->
@@ -1661,10 +1680,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>  @article{qi2025gpc,
-    title={Strengthening Generative Robot Policies through Predictive World Modeling},
-    author={Qi, Han and Yin, Haocheng and Du, Yilun and Yang, Heng},
-    journal={arXiv preprint arXiv:2502.00622},
+    <pre><code>  @article{qi25ral-gpc,
+    title={Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling},
+    note={Previously titled: Strengthening Generative Robot Policies through Predictive World Modeling},
+    author={Qi, Han and Yin, Haocheng and Zhu, Aris and Du, Yilun and Yang, Heng},
+    journal={IEEE Robotics and Automation Letters (RAL)},
     year={2025}
   }
 </code></pre>
